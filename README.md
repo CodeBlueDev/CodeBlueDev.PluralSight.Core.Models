@@ -1,5 +1,8 @@
 # CodeBlueDev.PluralSight.Core.Models
 [![License](https://img.shields.io/github/license/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models.svg?label=License)](https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/LICENSE)
+[![Issues](https://img.shields.io/github/issues-raw/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/website.svg?label=Issues)](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/issues)
+[![Gratipay User](https://img.shields.io/gratipay/user/CodeBlueDev.svg?label=Tips)](https://gratipay.com/~CodeBlueDev/)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=@CodeBlueDev)
 
 A .NET library containing PluralSight domain models that can be utilized by other .NET projects.
 
