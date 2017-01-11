@@ -521,7 +521,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             Assert.IsFalse(module.UserMayBookmark);
             Assert.IsFalse(module.IsBookmarked);
             Assert.IsNotNull(module.Clips);
-            Assert.AreEqual(11, module.Clips.Length);
+            Assert.Greater(module.Clips.Length, 0);
             Assert.AreEqual("cs/has-not-been-viewed-checkmark-15-v1.png", module.HasBeenViewedImageUrl);
             Assert.AreEqual("You have not watched this Module.", module.HasBeenViewedAltText);
         }
@@ -926,7 +926,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             foreach (Module module in modules)
             {
                 Assert.IsNotNull(module.Clips);
-                Assert.Greater(0, module.Clips.Length);
+                Assert.Greater(module.Clips.Length, 0);
             }
         }
     }
