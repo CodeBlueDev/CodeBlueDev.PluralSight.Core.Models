@@ -1,0 +1,21 @@
+version: x.x.{build}
+
+branches:
+  only:
+    - master
+
+skip_commits:
+  files:
+    - README.md
+
+image: Visual Studio 2015
+
+configuration: Release
+
+before_build:
+  - cmd: appveyor-retry nuget restore
+
+build:
+  project: CodeBlueDev.PluralSight.Core.Models.sln
+  parallel: true
+  verbosity: normal
