@@ -12,12 +12,16 @@ A .NET library containing PluralSight domain models that can be utilized by othe
     - [Clip](#clip)
         - Properties
         - Sample JSON
+    - [Course](#course)
+        - Properties
+        - Sample JSON
     - [Course Level](#course-level)
         - Properties
         - Sample JSON
     - [Course Rating](#course-rating)
         - Properties
         - Sample JSON
+        
 ## TODO:
 - [ ] Transcripts (Not returned in current JSON).
 - [ ] Notes (Appears when watching a video clip).
@@ -79,6 +83,68 @@ A Clip model will be created via deserialization of the Modules JSON response. M
     "isBookmarked":false,
     "hasBeenViewedImageUrl":"cs/has-been-viewed-checkmark-15-v1.png",
     "hasBeenViewedAltText":"You have watched this Clip."
+}
+```
+
+## Course
+A Course model will be created via deserialization. Only a single Course model should be contained in the JSON response.
+
+### Course Properties
+|Property |Description|
+|:-------:|-----------|
+|Title|The title of the course.|
+|Level|The [Course Level](#course-level) for the Course.|
+|Duration|The recorded length of the Course.|
+|ReleaseDate|The date the Course was released.|
+|Name|The internal PluralSight name of the course.|
+|Authors|The [Author(s)](#author) for the Course.|
+|HasTranscript|Indicates whether the Course has transcripts.|
+|CourseRating|The [Course Rating](#course-rating) for the Course.|
+|IsRetired|Indicates whether the Course has been retired.|
+|ShortDescription|The short description of the course.|
+|Description|The description of the course.|
+|IsBookmarked|Indicates whether the user has bookmarked the course.|
+|UserMaySaveCourse|Indicates whether the user may save the course.|
+|ReplacementCourseName|The internal PluralSight Course name for the replacement Course if the Course has been retired.|
+|RetiredReason|The reason the Course has been retired.|
+|ReplacementCourseTitle|The Course title for the replacement Course if the Course has been retired.|
+|IsValid|Indicates whether the Course is valid.|
+|IsUserAuthorizedForTranscript|Indicates whether the User is authorized for transcripts for the Course.|
+
+### Course Sample JSON
+```json
+{
+    "title":"Windows Forms Best Practices",
+    "level":"Intermediate",
+    "duration":"04:35:57",
+    "releaseDate":"2014-09-27T00:00:00Z",
+    "name":"windows-forms-best-practices",
+    "authors":[
+    ],
+    "hasTranscript":true,
+    "courseRating":{
+
+    },
+    "isRetired":false,
+    "shortDescription":"This course demonstrates several best practices for Windows Forms application development by gradually improving a demo application. Topics covered include resizing, layout, accessibility, maintainable code, localization, usability, testability, threading, exception handling, custom control creation, and interoperability.",
+    "description":"This course demonstrates several best practices for Windows Forms development by taking a demo application and gradually improving it to improve the user experience and code quality. We'll see how you can improve the layout and resizing of your application, and how you can make it more accessible, usable, and navigable from the keyboard. We'll explore how to approach localization, exception handling, and threading. We'll also devote time to various patterns that will help you write more maintainable and testable code. Finally, we'll provide guidelines for creating your own custom controls, and see how you can interoperate other technologies such as hosting web and WPF content within a Windows Forms application.",
+    "isBookmarked":false,
+    "userMaySaveCourse":true,
+    "replacementCourseName":"",
+    "retiredReason":"",
+    "replacementCourseTitle":"",
+    "isValid":true,
+    "isUserAuthorizedForTranscript":false
+}
+```
+
+## Course Level
+The Course Level enumeration will typically be used during the deserialization of the Course JSON response. It has three possible values of Beginner, Intermediate, and Advanced.
+
+### Course Level Sample JSON
+```json
+{
+    "level":"Intermediate"
 }
 ```
 

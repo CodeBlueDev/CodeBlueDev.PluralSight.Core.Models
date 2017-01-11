@@ -165,35 +165,72 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         }
 
         /// <summary>
-        /// Tests if a Course Rating JSON block can be deserialized to a Course Rating model.
+        /// Tests if a Course JSON block can be deserialized to a Course model.
         /// </summary>
         [Test]
-        public void CourseRatingJsonShouldDeserializeIntoCourseRatingModel()
+        public void CourseJsonShouldDeserializeIntoCourseModel()
         {
             // Arrange
             const string Json = @"
             {
-                ""currentUsersRating"":0,
-                ""averageRating"":4.6,
-                ""rating"":4.6,
-                ""canRateThisCourse"":true,
-                ""courseName"":""windows-forms-best-practices"",
-                ""numberOfRaters"":297,
-                ""hasUserRatedCourse"":true
+                ""title"":""Windows Forms Best Practices"",
+                ""level"":""Intermediate"",
+                ""duration"":""04:35:57"",
+                ""releaseDate"":""2014-09-27T00:00:00Z"",
+                ""name"":""windows-forms-best-practices"",
+                ""authors"":[
+                    {
+                        ""handle"":""mark-heath"",
+                        ""firstName"":""Mark"",
+                        ""lastName"":""Heath""
+                    }
+                ],
+                ""hasTranscript"":true,
+                ""courseRating"":
+                {
+                    ""currentUsersRating"":0,
+                    ""averageRating"":4.6,
+                    ""rating"":4.6,
+                    ""canRateThisCourse"":false,
+                    ""courseName"":""windows-forms-best-practices"",
+                    ""numberOfRaters"":297,
+                    ""hasUserRatedCourse"":false
+                },
+                ""isRetired"":true,
+                ""shortDescription"":""This course demonstrates several best practices for Windows Forms application development by gradually improving a demo application. Topics covered include resizing, layout, accessibility, maintainable code, localization, usability, testability, threading, exception handling, custom control creation, and interoperability."",
+                ""description"":""This course demonstrates several best practices for Windows Forms development by taking a demo application and gradually improving it to improve the user experience and code quality. We'll see how you can improve the layout and resizing of your application, and how you can make it more accessible, usable, and navigable from the keyboard. We'll explore how to approach localization, exception handling, and threading. We'll also devote time to various patterns that will help you write more maintainable and testable code. Finally, we'll provide guidelines for creating your own custom controls, and see how you can interoperate other technologies such as hosting web and WPF content within a Windows Forms application."",
+                ""isBookmarked"":true,
+                ""userMaySaveCourse"":true,
+                ""replacementCourseName"":"""",
+                ""retiredReason"":"""",
+                ""replacementCourseTitle"":"""",
+                ""isValid"":true,
+                ""isUserAuthorizedForTranscript"":true
             }";
 
             // Act
-            CourseRating courseRating = JsonConvert.DeserializeObject<CourseRating>(Json);
+            Course course = JsonConvert.DeserializeObject<Course>(Json);
 
             // Assert
-            Assert.IsNotNull(courseRating);
-            Assert.AreEqual(0, courseRating.CurrentUsersRating);
-            Assert.AreEqual(4.6, courseRating.AverageRating);
-            Assert.AreEqual(4.6, courseRating.Rating);
-            Assert.IsTrue(courseRating.CanRateThisCourse);
-            Assert.AreEqual("windows-forms-best-practices", courseRating.CourseName);
-            Assert.AreEqual(297, courseRating.NumberOfRaters);
-            Assert.IsTrue(courseRating.HasUserRatedCourse);
+            Assert.IsNotNull(course);
+            Assert.AreEqual("Windows Forms Best Practices", course.Title);
+            Assert.AreEqual(new TimeSpan(4, 35, 57), course.Duration);
+            Assert.AreEqual(new DateTime(2014, 9, 27), course.ReleaseDate);
+            Assert.AreEqual("windows-forms-best-practices", course.Name);
+            Assert.IsNotNull(course.Authors);
+            Assert.AreEqual(1, course.Authors.Length);
+            Assert.IsTrue(course.HasTranscript);
+            Assert.IsNotNull(course.CourseRating);
+            Assert.IsTrue(course.IsRetired);
+            Assert.IsFalse(string.IsNullOrEmpty(course.ShortDescription));
+            Assert.IsFalse(string.IsNullOrEmpty(course.Description));
+            Assert.IsTrue(course.IsBookmarked);
+            Assert.IsTrue(course.UserMaySaveCourse);
+            Assert.IsTrue(string.IsNullOrEmpty(course.ReplacementCourseName));
+            Assert.IsTrue(string.IsNullOrEmpty(course.RetiredReason));
+            Assert.IsTrue(string.IsNullOrEmpty(course.ReplacementCourseTitle));
+            Assert.IsTrue(course.IsValid);
+            Assert.IsTrue(course.IsUserAuthorizedForTranscript);
         }
 
         /// <summary>
@@ -242,6 +279,38 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
 
             // Assert
             Assert.IsTrue(Enum.IsDefined(typeof(CourseLevel), courseLevel));
+        }
+
+        /// <summary>
+        /// Tests if a Course Rating JSON block can be deserialized to a Course Rating model.
+        /// </summary>
+        [Test]
+        public void CourseRatingJsonShouldDeserializeIntoCourseRatingModel()
+        {
+            // Arrange
+            const string Json = @"
+            {
+                ""currentUsersRating"":0,
+                ""averageRating"":4.6,
+                ""rating"":4.6,
+                ""canRateThisCourse"":true,
+                ""courseName"":""windows-forms-best-practices"",
+                ""numberOfRaters"":297,
+                ""hasUserRatedCourse"":true
+            }";
+
+            // Act
+            CourseRating courseRating = JsonConvert.DeserializeObject<CourseRating>(Json);
+
+            // Assert
+            Assert.IsNotNull(courseRating);
+            Assert.AreEqual(0, courseRating.CurrentUsersRating);
+            Assert.AreEqual(4.6, courseRating.AverageRating);
+            Assert.AreEqual(4.6, courseRating.Rating);
+            Assert.IsTrue(courseRating.CanRateThisCourse);
+            Assert.AreEqual("windows-forms-best-practices", courseRating.CourseName);
+            Assert.AreEqual(297, courseRating.NumberOfRaters);
+            Assert.IsTrue(courseRating.HasUserRatedCourse);
         }
     }
 }

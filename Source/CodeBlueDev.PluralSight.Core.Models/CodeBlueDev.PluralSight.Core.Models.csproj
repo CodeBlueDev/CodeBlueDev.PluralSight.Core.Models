@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Author.cs" />
     <Compile Include="Clip.cs" />
+    <Compile Include="Course.cs" />
     <Compile Include="CourseLevel.cs" />
     <Compile Include="CourseRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
