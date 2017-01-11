@@ -163,5 +163,37 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             Assert.IsNotNull(clips);
             Assert.AreEqual(2, clips.Length);
         }
+
+        /// <summary>
+        /// Tests if a Course Rating JSON block can be deserialized to a Course Rating model.
+        /// </summary>
+        [Test]
+        public void CourseRatingJsonShouldDeserializeIntoCourseRatingModel()
+        {
+            // Arrange
+            const string Json = @"
+            {
+                ""currentUsersRating"":0,
+                ""averageRating"":4.6,
+                ""rating"":4.6,
+                ""canRateThisCourse"":true,
+                ""courseName"":""windows-forms-best-practices"",
+                ""numberOfRaters"":297,
+                ""hasUserRatedCourse"":true
+            }";
+
+            // Act
+            CourseRating courseRating = JsonConvert.DeserializeObject<CourseRating>(Json);
+
+            // Assert
+            Assert.IsNotNull(courseRating);
+            Assert.AreEqual(0, courseRating.CurrentUsersRating);
+            Assert.AreEqual(4.6, courseRating.AverageRating);
+            Assert.AreEqual(4.6, courseRating.Rating);
+            Assert.IsTrue(courseRating.CanRateThisCourse);
+            Assert.AreEqual("windows-forms-best-practices", courseRating.CourseName);
+            Assert.AreEqual(297, courseRating.NumberOfRaters);
+            Assert.IsTrue(courseRating.HasUserRatedCourse);
+        }
     }
 }

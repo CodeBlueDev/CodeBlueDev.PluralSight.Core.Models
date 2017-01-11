@@ -12,7 +12,9 @@ A .NET library containing PluralSight domain models that can be utilized by othe
     - [Clip](#clip)
         - Properties
         - Sample JSON
-
+    - [Course Rating](#course-rating)
+        - Properties
+        - Sample JSON
 ## TODO:
 - [ ] Transcripts (Not returned in current JSON).
 - [ ] Notes (Appears when watching a video clip).
@@ -74,6 +76,33 @@ A Clip model will be created via deserialization of the Modules JSON response. M
     "isBookmarked":false,
     "hasBeenViewedImageUrl":"cs/has-been-viewed-checkmark-15-v1.png",
     "hasBeenViewedAltText":"You have watched this Clip."
+}
+```
+
+## Course Rating
+A Course Rating model will be created via deserialization of the Course JSON response. Only a single Course Rating should be contained in the Course JSON response.
+
+### Course Rating Properties
+|Property |Description|
+|:-------:|-----------|
+|CurrentUsersRating|The current user's rating for the course.|
+|AverageRating|The average rating for the course.|
+|Rating|The rating for the course.|
+|CanRateThisCourse|Indicates whether the user can rate the course.|
+|CourseName|The course name this rating is associated with.|
+|NumberOfRaters|The number of users that have rated the course.|
+|HasUserRatedCourse|Indicates whether the user has rated the course.|
+
+### Course Rating JSON Sample
+```json
+{
+    "currentUsersRating":0,
+    "averageRating":4.6,
+    "rating":4.6,
+    "canRateThisCourse":false,
+    "courseName":"windows-forms-best-practices",
+    "numberOfRaters":290,
+    "hasUserRatedCourse":false
 }
 ```
 

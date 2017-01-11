@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Author.cs" />
     <Compile Include="Clip.cs" />
+    <Compile Include="CourseRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
