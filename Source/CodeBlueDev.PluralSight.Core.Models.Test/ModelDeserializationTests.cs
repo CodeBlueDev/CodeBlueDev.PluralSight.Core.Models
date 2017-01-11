@@ -312,5 +312,622 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             Assert.AreEqual(297, courseRating.NumberOfRaters);
             Assert.IsTrue(courseRating.HasUserRatedCourse);
         }
+
+        /// <summary>
+        /// Tests if a Module JSON block can be deserialized to a Module model.
+        /// </summary>
+        [Test]
+        public void ModuleJsonShouldDeserializeIntoModuleModel()
+        {
+            // Arrange
+            const string Json = @"
+            {
+                ""userMayViewFirstClip"": false,
+                ""moduleRef"": ""mark-heath/windows-forms-best-practices-m1"",
+                ""title"": ""Creating Excellent Windows Forms Applications"",
+                ""description"": ""This module discusses why you might still be using Windows Forms, despite it\n  now being a fairly old technology. We make the case that it is still possible to create\nexcellent applications in Windows Forms. We also introduce the demo application that we'll\nbe improving throughout this course, and begin by renaming controls, using data binding, and\nchecking that our forms have appropriate default properties set. "",
+                ""duration"": ""00:27:00"",
+                ""hasBeenViewed"": false,
+                ""isHighlighted"": false,
+                ""fragmentIdentifier"": ""windows-forms-best-practices-m1"",
+                ""firstClipLaunchClickHandler"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=0&course=windows-forms-best-practices"",
+                ""userMayBookmark"": false,
+                ""isBookmarked"": false,
+                ""clips"": [
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 0,
+                    ""title"": ""Module Introduction"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:00:57"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=0&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-01"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 1,
+                    ""title"": ""Is Windows Forms Dead?"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:01:36"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=1&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-02"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 2,
+                    ""title"": ""Why Use Windows Forms?"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:01:27"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=2&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-03"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 3,
+                    ""title"": ""Building Great Windows Forms Applications"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:01:59"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=3&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-04"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 4,
+                    ""title"": ""Moving Away From Windows Forms"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:01:21"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=4&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-05"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 5,
+                    ""title"": ""Course Prerequisites and Contents"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:02:40"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=5&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-06"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 6,
+                    ""title"": ""Introducing the Demo Application"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:01:48"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=6&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-07"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 7,
+                    ""title"": ""Naming Controls"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:02:17"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=7&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-08"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 8,
+                    ""title"": ""Using Data Binding"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:05:12"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=8&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-09"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 9,
+                    ""title"": ""Setting Default Properties on Forms"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:04:44"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=9&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-10"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  },
+                  {
+                    ""transcripts"": [],
+                    ""clipIndex"": 10,
+                    ""title"": ""Module Summary"",
+                    ""hasBeenViewed"": false,
+                    ""duration"": ""00:02:54"",
+                    ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=10&course=windows-forms-best-practices"",
+                    ""userMayViewClip"": false,
+                    ""clickActionDescription"": ""View with player"",
+                    ""isHighlighted"": false,
+                    ""name"": ""windows-forms-best-practices-m1-11"",
+                    ""isBookmarked"": false,
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                  }
+                ],
+                ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                ""hasBeenViewedAltText"": ""You have not watched this Module.""
+            }";
+
+            // Act
+            Module module = JsonConvert.DeserializeObject<Module>(Json);
+
+            // Assert
+            Assert.IsNotNull(module);
+            Assert.IsFalse(module.UserMayViewFirstClip);
+            Assert.AreEqual("mark-heath/windows-forms-best-practices-m1", module.ModuleRef);
+            Assert.AreEqual("Creating Excellent Windows Forms Applications", module.Title);
+            Assert.AreEqual("This module discusses why you might still be using Windows Forms, despite it\n  now being a fairly old technology. We make the case that it is still possible to create\nexcellent applications in Windows Forms. We also introduce the demo application that we'll\nbe improving throughout this course, and begin by renaming controls, using data binding, and\nchecking that our forms have appropriate default properties set. ", module.Description);
+            Assert.AreEqual(new TimeSpan(0, 27, 0), module.Duration);
+            Assert.IsFalse(module.HasBeenViewed);
+            Assert.IsFalse(module.IsHighlighted);
+            Assert.AreEqual("windows-forms-best-practices-m1", module.FragmentIdentifier);
+            Assert.AreEqual("author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=0&course=windows-forms-best-practices", module.FirstClipLaunchClickHandler);
+            Assert.IsFalse(module.UserMayBookmark);
+            Assert.IsFalse(module.IsBookmarked);
+            Assert.IsNotNull(module.Clips);
+            Assert.AreEqual(11, module.Clips.Length);
+            Assert.AreEqual("cs/has-not-been-viewed-checkmark-15-v1.png", module.HasBeenViewedImageUrl);
+            Assert.AreEqual("You have not watched this Module.", module.HasBeenViewedAltText);
+        }
+
+        /// <summary>
+        /// Tests if a Module JSON block with multiple Modules can be deserialized to multiple Module models.
+        /// </summary>
+        [Test]
+        public void ModuleJsonWithMultipleModulesShouldDeserializeIntoMultipleModuleModels()
+        {
+            // Arrange
+            const string Json = @"
+            [
+                {
+                    ""userMayViewFirstClip"": false,
+                    ""moduleRef"": ""mark-heath/windows-forms-best-practices-m1"",
+                    ""title"": ""Creating Excellent Windows Forms Applications"",
+                    ""description"": ""This module discusses why you might still be using Windows Forms, despite it\n  now being a fairly old technology. We make the case that it is still possible to create\nexcellent applications in Windows Forms. We also introduce the demo application that we'll\nbe improving throughout this course, and begin by renaming controls, using data binding, and\nchecking that our forms have appropriate default properties set. "",
+                    ""duration"": ""00:27:00"",
+                    ""hasBeenViewed"": false,
+                    ""isHighlighted"": false,
+                    ""fragmentIdentifier"": ""windows-forms-best-practices-m1"",
+                    ""firstClipLaunchClickHandler"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=0&course=windows-forms-best-practices"",
+                    ""userMayBookmark"": false,
+                    ""isBookmarked"": false,
+                    ""clips"": [
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 0,
+                        ""title"": ""Module Introduction"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:00:57"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=0&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-01"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 1,
+                        ""title"": ""Is Windows Forms Dead?"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:01:36"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=1&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-02"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 2,
+                        ""title"": ""Why Use Windows Forms?"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:01:27"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=2&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-03"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 3,
+                        ""title"": ""Building Great Windows Forms Applications"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:01:59"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=3&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-04"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 4,
+                        ""title"": ""Moving Away From Windows Forms"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:01:21"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=4&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-05"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 5,
+                        ""title"": ""Course Prerequisites and Contents"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:40"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=5&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-06"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 6,
+                        ""title"": ""Introducing the Demo Application"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:01:48"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=6&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-07"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 7,
+                        ""title"": ""Naming Controls"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:17"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=7&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-08"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 8,
+                        ""title"": ""Using Data Binding"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:05:12"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=8&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-09"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 9,
+                        ""title"": ""Setting Default Properties on Forms"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:04:44"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=9&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-10"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 10,
+                        ""title"": ""Module Summary"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:54"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=10&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m1-11"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      }
+                    ],
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Module.""
+                },
+                {
+                    ""userMayViewFirstClip"": false,
+                    ""moduleRef"": ""mark-heath/windows-forms-best-practices-m2"",
+                    ""title"": ""Resizing and Layout"",
+                    ""description"": ""This module explores several techniques in Windows Forms to enable your application to have an excellent resize experience. We'll also consider several different options for laying out your user interface to show the most important data and commands."",
+                    ""duration"": ""00:43:12"",
+                    ""hasBeenViewed"": false,
+                    ""isHighlighted"": false,
+                    ""fragmentIdentifier"": ""windows-forms-best-practices-m2"",
+                    ""firstClipLaunchClickHandler"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=0&course=windows-forms-best-practices"",
+                    ""userMayBookmark"": false,
+                    ""isBookmarked"": false,
+                    ""clips"": [
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 0,
+                        ""title"": ""Module Introduction"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:01:57"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=0&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-01"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 1,
+                        ""title"": ""Resizing"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:46"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=1&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-02"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 2,
+                        ""title"": ""Demo - Anchoring Controls"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:03:02"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=2&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-03"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 3,
+                        ""title"": ""Demo - Resizing Labels"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:20"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=3&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-04"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 4,
+                        ""title"": ""Demo - Split Container"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:05:32"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=4&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-05"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 5,
+                        ""title"": ""Demo - Table Layout Panel"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:41"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=5&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-06"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 6,
+                        ""title"": ""Demo - Minimum Sizes"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:01:13"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=6&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-07"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 7,
+                        ""title"": ""Demo - Flow Layout Panel"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:04:44"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=7&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-08"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 8,
+                        ""title"": ""Layouts"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:07:09"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=8&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-09"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 9,
+                        ""title"": ""Demo - Explorer Style Layout"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:06:30"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=9&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-10"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 10,
+                        ""title"": ""Demo - Creating the Podcasts View"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:57"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=10&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-11"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      },
+                      {
+                        ""transcripts"": [],
+                        ""clipIndex"": 11,
+                        ""title"": ""Module Summary"",
+                        ""hasBeenViewed"": false,
+                        ""duration"": ""00:02:18"",
+                        ""playerParameters"": ""author=mark-heath&name=windows-forms-best-practices-m2&mode=live&clip=11&course=windows-forms-best-practices"",
+                        ""userMayViewClip"": false,
+                        ""clickActionDescription"": ""View with player"",
+                        ""isHighlighted"": false,
+                        ""name"": ""windows-forms-best-practices-m2-12"",
+                        ""isBookmarked"": false,
+                        ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                        ""hasBeenViewedAltText"": ""You have not watched this Clip.""
+                      }
+                    ],
+                    ""hasBeenViewedImageUrl"": ""cs/has-not-been-viewed-checkmark-15-v1.png"",
+                    ""hasBeenViewedAltText"": ""You have not watched this Module.""
+                }
+            ]";
+
+            // Act
+            Module[] modules = JsonConvert.DeserializeObject<Module[]>(Json);
+
+            // Assert
+            Assert.IsNotNull(modules);
+            Assert.AreEqual(2, modules.Length);
+
+            foreach (Module module in modules)
+            {
+                Assert.IsNotNull(module.Clips);
+                Assert.Greater(0, module.Clips.Length);
+            }
+        }
     }
 }

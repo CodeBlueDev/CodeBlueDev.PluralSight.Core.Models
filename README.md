@@ -21,6 +21,10 @@ A .NET library containing PluralSight domain models that can be utilized by othe
     - [Course Rating](#course-rating)
         - Properties
         - Sample JSON
+    - [Module](#module)
+        - Properties
+        - Sample JSON
+- [Copyright](#copyright)
         
 ## TODO:
 - [ ] Transcripts (Not returned in current JSON).
@@ -172,6 +176,48 @@ A Course Rating model will be created via deserialization of the Course JSON res
     "courseName":"windows-forms-best-practices",
     "numberOfRaters":290,
     "hasUserRatedCourse":false
+}
+```
+
+## Module
+A Module model will be created via deserialization of the Modules JSON response. Multiple Module models can be included in the JSON response but the properties for each Module will remain the same.
+
+### Module Properties
+|Property |Description|
+|:-------:|-----------|
+|UserMayViewFirstClip|A boolean value indicated whether the user may view the first clip in the module.|
+|ModuleRef|A module reference string used by PluralSight.|
+|Title|The title of the module.|
+|Description|The description of the module.|
+|Duration|The duration of the module.|
+|HasBeenViewed|A boolean value indicating whether the user has watched all clips in a module.|
+|IsHighlighted|A boolean value indicating whether the module is highlighted. This value is set when the user searches for a value that would highlight the module.|
+|FragementIdentifier|A string referencing the module used by PluralSight.|
+|FirstClipLaunchClickHandler|Text value used by the PluralSight video player.|
+|UserMayBookmark|A boolean value indicating whether the user may bookmark the module.|
+|IsBookmarked|A boolean value indicating whether the user has bookmarked the module.|
+|Clips|An array of clip information for the module.|
+|HasBeenViewedImageUrl|The image URL used to display an image when the module has been viewed by the user already.|
+|HasBeenViewedAltText|The text displayed in the alt tag when the module has been viewed by the user already.|
+
+### Module JSON Sample
+```json
+{
+    "userMayViewFirstClip":false,
+    "moduleRef":"mark-heath/windows-forms-best-practices-m1",
+    "title":"Creating Excellent Windows Forms Applications",
+    "description":"This module discusses why you might still be using Windows Forms, despite it\n  now being a fairly old technology. We make the case that it is still possible to create\nexcellent applications in Windows Forms. We also introduce the demo application that we'll\nbe improving throughout this course, and begin by renaming controls, using data binding, and\nchecking that our forms have appropriate default properties set. ",
+    "duration":"00:27:00",
+    "hasBeenViewed":true,
+    "isHighlighted":false,
+    "fragmentIdentifier":"windows-forms-best-practices-m1",
+    "firstClipLaunchClickHandler":"author=mark-heath&name=windows-forms-best-practices-m1&mode=live&clip=0&course=windows-forms-best-practices",
+    "userMayBookmark":true,
+    "isBookmarked":false,
+    "clips":[
+    ],
+    "hasBeenViewedImageUrl":"cs/has-been-viewed-checkmark-15-v1.png",
+    "hasBeenViewedAltText":"You have watched this Module."
 }
 ```
 
