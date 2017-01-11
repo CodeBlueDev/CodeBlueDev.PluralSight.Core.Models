@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlueDev.PluralSight.Core.Models", "Source\CodeBlueDev.PluralSight.Core.Models\CodeBlueDev.PluralSight.Core.Models.csproj", "{FE1381A7-0829-4440-9BB1-A370BF787E1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{090B6FA7-4503-44AE-90A5-1BF1A8977CEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8627C119-6970-4065-B9E9-1332D567C1E1}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2CDDD5B8-0AE5-4F4C-96D4-130FF2B63BD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlueDev.PluralSight.Core.Models.Test", "Source\CodeBlueDev.PluralSight.Core.Models.Test\CodeBlueDev.PluralSight.Core.Models.Test.csproj", "{A9A265EF-E35A-4297-999B-7423B7CBF497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE1381A7-0829-4440-9BB1-A370BF787E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1381A7-0829-4440-9BB1-A370BF787E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1381A7-0829-4440-9BB1-A370BF787E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1381A7-0829-4440-9BB1-A370BF787E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9A265EF-E35A-4297-999B-7423B7CBF497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9A265EF-E35A-4297-999B-7423B7CBF497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9A265EF-E35A-4297-999B-7423B7CBF497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9A265EF-E35A-4297-999B-7423B7CBF497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE1381A7-0829-4440-9BB1-A370BF787E1D} = {090B6FA7-4503-44AE-90A5-1BF1A8977CEB}
+		{A9A265EF-E35A-4297-999B-7423B7CBF497} = {2CDDD5B8-0AE5-4F4C-96D4-130FF2B63BD6}
+	EndGlobalSection
+EndGlobal
