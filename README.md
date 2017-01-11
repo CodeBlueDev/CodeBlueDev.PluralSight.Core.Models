@@ -12,6 +12,9 @@ A .NET library containing PluralSight domain models that can be utilized by othe
     - [Clip](#clip)
         - Properties
         - Sample JSON
+    - [Course Level](#course-level)
+        - Properties
+        - Sample JSON
     - [Course Rating](#course-rating)
         - Properties
         - Sample JSON

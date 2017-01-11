@@ -195,5 +195,53 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             Assert.AreEqual(297, courseRating.NumberOfRaters);
             Assert.IsTrue(courseRating.HasUserRatedCourse);
         }
+
+        /// <summary>
+        /// Tests if a JSON block for a 'Beginner' Course Level can be deserialized to the appropriate CourseLevel enum value.
+        /// </summary>
+        [Test]
+        public void BeginnerCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
+        {
+            // Arrange
+            const string Json = @"""Beginner""";
+
+            // Act
+            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(Json);
+
+            // Assert
+            Assert.IsTrue(Enum.IsDefined(typeof(CourseLevel), courseLevel));
+        }
+
+        /// <summary>
+        /// Tests if a JSON block for an 'Intermediate' Course Level can be deserialize to the appropriate CourseLevel enum value.
+        /// </summary>
+        [Test]
+        public void IntermediateCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
+        {
+            // Arrange
+            const string Json = @"""Intermediate""";
+
+            // Act
+            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(Json);
+
+            // Assert
+            Assert.IsTrue(Enum.IsDefined(typeof(CourseLevel), courseLevel));
+        }
+
+        /// <summary>
+        /// Tests if a JSON block for an 'Advanced' Course Level can deserialized to the appropriate CourseLevel enum value.
+        /// </summary>
+        [Test]
+        public void AdvancedCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
+        {
+            // Arrange
+            const string Json = @"""Advanced""";
+
+            // Act
+            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(Json);
+
+            // Assert
+            Assert.IsTrue(Enum.IsDefined(typeof(CourseLevel), courseLevel));
+        }
     }
 }
