@@ -2,6 +2,7 @@
 [![License](https://img.shields.io/github/license/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models.svg?label=License)](https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/LICENSE)
 [![Issues](https://img.shields.io/github/issues-raw/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/website.svg?label=Issues)](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/issues)
 [![Build Status](https://ci.appveyor.com/api/projects/status/t972eldgvagwfua0?svg=true)](https://ci.appveyor.com/project/CodeBlueDev/codebluedev-pluralsight-core-models)
+[![Coveralls](https://img.shields.io/coveralls/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models.svg?label=Coverage)](https://coveralls.io/github/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models)
 [![Gratipay User](https://img.shields.io/gratipay/user/CodeBlueDev.svg?label=Tips)](https://gratipay.com/~CodeBlueDev/)
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=@CodeBlueDev)
 
