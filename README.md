@@ -1,5 +1,6 @@
 # CodeBlueDev.PluralSight.Core.Models
 [![License](https://img.shields.io/github/license/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models.svg?label=License)](https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/LICENSE)
+[![NuGet](https://img.shields.io/nuget/v/CodeBlueDev.PluralSight.Core.Models.svg?label=NuGet)](https://www.nuget.org/packages/CodeBlueDev.PluralSight.Core.Models)
 [![Issues](https://img.shields.io/github/issues-raw/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/website.svg?label=Issues)](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/issues)
 [![Build Status](https://ci.appveyor.com/api/projects/status/t972eldgvagwfua0?svg=true)](https://ci.appveyor.com/project/CodeBlueDev/codebluedev-pluralsight-core-models)
 [![Coveralls](https://img.shields.io/coveralls/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models.svg?label=Coverage)](https://coveralls.io/github/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models)
