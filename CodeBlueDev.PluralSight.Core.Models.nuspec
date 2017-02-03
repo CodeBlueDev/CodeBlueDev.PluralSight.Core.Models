@@ -8,7 +8,7 @@
     <owners>CodeBlueDev</owners>
     <licenseUrl>https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models</projectUrl>
-    <licenseUrl>https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/NuGet%20Icon.png</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/NuGet%20Icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A .NET library containing PluralSight domain models that can be utilized by other .NET projects.</description>
     <summary>A .NET library containing PluralSight domain models that can be utilized by other .NET projects.</summary>
