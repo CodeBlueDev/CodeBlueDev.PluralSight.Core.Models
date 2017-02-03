@@ -10,7 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8627C119-6970-4065-B9E9-1332D567C1E1}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		CodeBlueDev.PluralSight.Core.Models.nuspec = CodeBlueDev.PluralSight.Core.Models.nuspec
 		LICENSE = LICENSE
+		NuGet Icon.png = NuGet Icon.png
 		README.md = README.md
 	EndProjectSection
 EndProject
