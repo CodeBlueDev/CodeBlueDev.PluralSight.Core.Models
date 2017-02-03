@@ -31,6 +31,9 @@ test_script:
 - ps: >-
     .\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
 
+after_test:
+  - cmd: nuget pack CodeBlueDev.PluralSight.Core.Models.nuspec
+
 artifacts:
   - path: CodeBlueDev.PluralSight.Core.Models.*.nupkg
 
