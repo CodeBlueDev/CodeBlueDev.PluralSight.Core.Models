@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>CodeBlueDev.PluralSight.Core.Models</id>
+    <version>1.0.0.0</version>
+    <title>CodeBlueDev.PluralSight.Core.Models</title>
+    <authors>CodeBlueDev</authors>
+    <owners>CodeBlueDev</owners>
+    <licenseUrl>https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/master/NuGet%20Icon.png</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A .NET library containing PluralSight domain models that can be utilized by other .NET projects.</description>
+    <summary>A .NET library containing PluralSight domain models that can be utilized by other .NET projects.</summary>
+    <releaseNotes>Initial release, includes PluralSight Core Models for Author, Clip, Course, Course Level, Course Rating, and Module.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <language>en-US</language>
+    <tags>PluralSight CodeBlueDev</tags>
+  </metadata>
+  <files>
+    <file src="Source\CodeBlueDev.PluralSight.Core.Models/bin/Release/CodeBlueDev.PluralSight.Core.Models.dll" target="lib\net45" />
+  </files>
+</package>
