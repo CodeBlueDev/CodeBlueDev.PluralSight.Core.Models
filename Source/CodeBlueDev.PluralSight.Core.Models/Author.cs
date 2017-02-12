@@ -18,9 +18,9 @@ namespace CodeBlueDev.PluralSight.Core.Models
     public sealed class Author
     {
         /// <summary>
-        /// Gets or sets the handle used by PluralSight to represent the author.
+        /// Gets or sets the Id of the PluralSight author.
         /// </summary>
-        public string Handle { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or sets the first name of the PluralSight author.
@@ -31,5 +31,10 @@ namespace CodeBlueDev.PluralSight.Core.Models
         /// Gets or sets the last name of the PluralSight author.
         /// </summary>
         public string LastName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the display name of the PluralSight author.
+        /// </summary>
+        public string DisplayName { get; set; }
     }
 }
