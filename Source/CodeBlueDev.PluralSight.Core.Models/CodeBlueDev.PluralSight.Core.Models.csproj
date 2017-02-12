@@ -40,6 +40,7 @@
     <Compile Include="CourseLevel.cs" />
     <Compile Include="CourseRating.cs" />
     <Compile Include="Module.cs" />
+    <Compile Include="CourseClip.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

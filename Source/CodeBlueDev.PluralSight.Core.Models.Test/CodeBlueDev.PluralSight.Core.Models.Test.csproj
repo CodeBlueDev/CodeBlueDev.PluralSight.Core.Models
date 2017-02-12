@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorDeserializationTests.cs" />
+    <Compile Include="CourseClipDeserializationTests.cs" />
     <Compile Include="ModelDeserializationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
