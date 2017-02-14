@@ -39,8 +39,6 @@ artifacts:
 
 deploy:
   provider: NuGet
-  on:
-    appveyor_repo_tag: true
   api_key:
     secure: yx4NC9MGigYes63ckSkAysWgcYTmpbhe0ZDb9HeO4THEMdbi1gKuI07QxijiuIRK
   artifact: /.*CodeBlueDev.*.nupkg/
