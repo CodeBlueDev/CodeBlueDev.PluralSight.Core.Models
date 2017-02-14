@@ -47,6 +47,7 @@
     <Compile Include="ModelDeserializationTests.cs" />
     <Compile Include="CourseDeserializationTests.cs" />
     <Compile Include="CourseImageDeserializationTests.cs" />
+    <Compile Include="CourseLevelDeserializationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
