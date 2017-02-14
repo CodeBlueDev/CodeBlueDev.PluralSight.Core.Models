@@ -49,6 +49,7 @@
     <Compile Include="CourseImageDeserializationTests.cs" />
     <Compile Include="CourseLevelDeserializationTests.cs" />
     <Compile Include="CourseRatingDeserializationTests.cs" />
+    <Compile Include="CourseModuleDeserializationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
