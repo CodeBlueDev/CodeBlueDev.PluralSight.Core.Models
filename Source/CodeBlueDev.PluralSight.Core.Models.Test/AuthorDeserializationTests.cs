@@ -22,7 +22,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if an Author JSON block can be deserialized to an Author model.
         /// </summary>
-        [Test]
+        [Test, Category("Author")]
         public void AuthorJsonShouldDeserializeIntoAuthorModel()
         {
             // Arrange
@@ -48,7 +48,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if an Author JSON block with multiple Authors can be deserialized to multiple Author models.
         /// </summary>
-        [Test]
+        [Test, Category("Author")]
         public void AuthorJsonWithMultipleAuthorsShouldDeserializeIntoMultipleAuthorModels()
         {
             // Arrange

@@ -20,9 +20,9 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
     public class CourseClipDeserializationTests
     {
         /// <summary>
-        /// Tests if a Clip JSON block can be deserialized to a Clip model.
+        /// Tests if a Course Clip JSON block can be deserialized to a Course Clip model.
         /// </summary>
-        [Test]
+        [Test, Category("Course Clip")]
         public void ClipJsonShouldDeserializeIntoClipModel()
         {
             // Arrange
@@ -45,10 +45,10 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         }
 
         /// <summary>
-        /// Tests if a Clip JSON block with multiple Clips can be deserialized to multiple Clip models.
+        /// Tests if a Course Clip JSON block with multiple Course Clips can be deserialized to multiple Course Clip models.
         /// </summary>
-        [Test]
-        public void ClipJsonWithMultipleClipsShouldDeserializeIntoMultipleClipModels()
+        [Test, Category("Course Clip")]
+        public void CourseClipJsonWithMultipleCourseClipsShouldDeserializeIntoMultipleCourseClipModels()
         {
             // Arrange
             const string Json = @"[
