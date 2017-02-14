@@ -51,6 +51,7 @@
     <Compile Include="CourseRatingDeserializationTests.cs" />
     <Compile Include="CourseModuleDeserializationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetiredDeserializationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
