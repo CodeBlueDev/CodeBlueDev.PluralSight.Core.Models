@@ -18,93 +18,98 @@ namespace CodeBlueDev.PluralSight.Core.Models
     public sealed class Course
     {
         /// <summary>
-        /// Gets or sets the title of the course.
+        /// Gets or sets the id of the PluralSight Course.
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date the PluralSight Course was published on.
+        /// </summary>
+        public DateTime PublishedOn { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date the PluralSight Course was last updated on.
+        /// </summary>
+        public DateTime UpdatedOn { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title of the PluralSight Course.
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="CourseLevel">level</see> of the course.
-        /// </summary>
-        public CourseLevel Level { get; set; }
-
-        /// <summary>
-        /// Gets or sets the duration of the course.
-        /// </summary>
-        public TimeSpan Duration { get; set; }
-
-        /// <summary>
-        /// Gets or sets the release date of the course.
-        /// </summary>
-        public DateTime ReleaseDate { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the course.
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the <see cref="Author">author(s)</see> of the course.
-        /// </summary>
-        public Author[] Authors { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the course has a transcript.
-        /// </summary>
-        public bool HasTranscript { get; set; }
-
-        /// <summary>
-        /// Gets or sets the <see cref="CourseRating">course rating</see> of a course.
-        /// </summary>
-        public CourseRating CourseRating { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the course is retired.
-        /// </summary>
-        public bool IsRetired { get; set; }
-
-        /// <summary>
-        /// Gets or sets the short description of the course.
+        /// Gets or sets the short description of the PluralSight Course.
         /// </summary>
         public string ShortDescription { get; set; }
 
         /// <summary>
-        /// Gets or sets the description of the course.
+        /// Gets or sets the description of the PluralSight Course.
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the course is bookmarked by the user.
+        /// Gets or sets the PluralSight Course level.
         /// </summary>
-        public bool IsBookmarked { get; set; }
+        public CourseLevel Level { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the user may save the course.
+        /// Gets or sets the duration of the PluralSight Course.
         /// </summary>
-        public bool UserMaySaveCourse { get; set; }
+        public string Duration { get; set; }
 
         /// <summary>
-        /// Gets or sets the replacement course name if the course has been retired.
+        /// Gets or sets the popularity score of the PluralSight Course.
         /// </summary>
-        public string ReplacementCourseName { get; set; }
+        public int PopularityScore { get; set; }
 
         /// <summary>
-        /// Gets or sets the retired reason if the course has been retired.
+        /// Gets or sets a value indicating whether the PluralSight Course has a transcript.
         /// </summary>
-        public string RetiredReason { get; set; }
+        public bool HasTranscript { get; set; }
 
         /// <summary>
-        /// Gets or sets the replacement course title if the course has been retired.
+        /// Gets or sets a value indicating whether the PluralSight Course has an assessment.
         /// </summary>
-        public string ReplacementCourseTitle { get; set; }
+        public bool HasAssessment { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the course is valid.
+        /// Gets or sets a value indicating whether the PluralSight Course has a learning check.
         /// </summary>
-        public bool IsValid { get; set; }
+        public bool HasLearningCheck { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the user is authorized for a transcript for the course.
+        /// Gets or sets the PluralSight player url.
         /// </summary>
-        public bool IsUserAuthorizedForTranscript { get; set; }
+        public string PlayerUrl { get; set; }
+
+        /// <summary>
+        /// Gets or sets the skill paths the PluralSight Course is a part of.
+        /// </summary>
+        public SkillPath[] SkillPaths { get; set; }
+
+        /// <summary>
+        /// Gets or sets the retired status of the PluralSight Course.
+        /// </summary>
+        public Retired Retired { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rating of the PluralSight Course.
+        /// </summary>
+        public CourseRating Rating { get; set; }
+
+        /// <summary>
+        /// Gets or sets the PluralSight Course image(s).
+        /// </summary>
+        public CourseImage CourseImage { get; set; }
+
+        /// <summary>
+        /// Gets or sets the PluralSight Course Author(s).
+        /// </summary>
+        public Author[] Authors { get; set; }
+
+        /// <summary>
+        /// Gets or sets the intended audience(s) for the PluralSight Course.
+        /// </summary>
+        public string[] Audiences { get; set; }
     }
 }

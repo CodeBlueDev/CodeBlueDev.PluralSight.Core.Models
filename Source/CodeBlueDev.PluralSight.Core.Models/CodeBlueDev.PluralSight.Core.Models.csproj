@@ -35,11 +35,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Author.cs" />
-    <Compile Include="Clip.cs" />
     <Compile Include="Course.cs" />
+    <Compile Include="CourseImage.cs" />
     <Compile Include="CourseLevel.cs" />
     <Compile Include="CourseRating.cs" />
-    <Compile Include="Module.cs" />
+    <Compile Include="CourseClip.cs" />
+    <Compile Include="CourseModule.cs" />
+    <Compile Include="Retired.cs" />
+    <Compile Include="SkillPath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,7 +24,7 @@ First, [install NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). 
     PM> Install-Package CodeBlueDev.PluralSight.Core.Models
 
 ## Having Issues?
-Submit an issue providing detailed information about the issue [here](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/issues/new). Providing detailed information and attachments will help us resolve the issue faster.
+Submit an issue providing detailed information about the issue [here](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/issues/new). Providing detailed information and attachments about the issue will help resolve the issue faster.
 
 ## Copyright
 CodeBlueDev.PluralSight.Core.Models is Copyright &copy; 2016-2017 [CodeBlueDev](https://www.codebluedev.wordpress.com) and other contributors under the [MIT license](LICENSE).

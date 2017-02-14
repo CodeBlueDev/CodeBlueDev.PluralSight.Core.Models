@@ -42,8 +42,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelDeserializationTests.cs" />
+    <Compile Include="AuthorDeserializationTests.cs" />
+    <Compile Include="CourseClipDeserializationTests.cs" />
+    <Compile Include="CourseDeserializationTests.cs" />
+    <Compile Include="CourseImageDeserializationTests.cs" />
+    <Compile Include="CourseLevelDeserializationTests.cs" />
+    <Compile Include="CourseRatingDeserializationTests.cs" />
+    <Compile Include="CourseModuleDeserializationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetiredDeserializationTests.cs" />
+    <Compile Include="SkillPathDeserializationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

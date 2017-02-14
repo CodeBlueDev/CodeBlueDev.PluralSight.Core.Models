@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CourseRating.cs" company="CodeBlueDev">
+// <copyright file="CourseImage.cs" company="CodeBlueDev">
 //   Copyright (c) CodeBlueDev. All rights reserved.
 // </copyright>
 // <summary>
-//   Represents the rating for a course.
+//   Represents a PluralSight Course's images.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -12,19 +12,24 @@ namespace CodeBlueDev.PluralSight.Core.Models
     using System;
 
     /// <summary>
-    /// Represents the rating for a course.
+    /// Represents the image of the PluralSight Course.
     /// </summary>
     [Serializable]
-    public sealed class CourseRating
+    public sealed class CourseImage
     {
         /// <summary>
-        /// Gets or sets the average rating for the course.
+        /// Gets or sets the course list image url.
         /// </summary>
-        public decimal Average { get; set; }
+        public string CourseListUrl { get; set; }
 
         /// <summary>
-        /// Gets or sets the number of users that have rated the course.
+        /// Gets or sets the default image url.
         /// </summary>
-        public int RatersCount { get; set; }
+        public string DefaultUrl { get; set; }
+
+        /// <summary>
+        /// Gets or sets the small image url.
+        /// </summary>
+        public string SmallUrl { get; set; }
     }
 }
