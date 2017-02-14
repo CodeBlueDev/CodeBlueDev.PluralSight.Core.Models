@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SkillPathDeserializationTests.cs" company="">
+// <copyright file="SkillPathDeserializationTests.cs" company="CodeBlueDev">
 //   All rights reserved.
 // </copyright>
 // <summary>

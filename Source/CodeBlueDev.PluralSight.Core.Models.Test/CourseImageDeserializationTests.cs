@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CourseImageDeserializationTests.cs" company="">
+// <copyright file="CourseImageDeserializationTests.cs" company="CodeBlueDev">
 //   All rights reserved.
 // </copyright>
 // <summary>

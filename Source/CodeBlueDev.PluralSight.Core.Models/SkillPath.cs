@@ -20,7 +20,7 @@ namespace CodeBlueDev.PluralSight.Core.Models
         /// <summary>
         /// Gets or sets the id of the PluralSight Skill Path.
         /// </summary>
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the title of the PluralSight Skill Path.

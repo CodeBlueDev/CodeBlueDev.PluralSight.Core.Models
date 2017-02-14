@@ -57,13 +57,13 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
                 {
                     ""id"":""steve-smith"",
                     ""firstName"":""Steve"",
-                    ""lastName"":""Smith""
+                    ""lastName"":""Smith"",
                     ""displayName"":""Steve Smith""
                 },
                 {
                     ""id"":""david-starr"",
                     ""firstName"":""David"",
-                    ""lastName"":""Starr""
+                    ""lastName"":""Starr"",
                     ""displayName"":""David Starr""
                 }
             ]";

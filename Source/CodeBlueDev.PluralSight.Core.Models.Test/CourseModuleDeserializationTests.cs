@@ -1,11 +1,21 @@
-﻿namespace CodeBlueDev.PluralSight.Core.Models.Test
-{
-    using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CourseModuleDeserializationTests.cs" company="CodeBlueDev">
+//   All rights reserved.
+// </copyright>
+// <summary>
+//   Tests if a Course Module JSON block can be deserialized to a Course Module model.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
+namespace CodeBlueDev.PluralSight.Core.Models.Test
+{
     using Newtonsoft.Json;
 
     using NUnit.Framework;
 
+    /// <summary>
+    /// Tests if a Course Module JSON block can be deserialized to a Course Module model.
+    /// </summary>
     [TestFixture]
     public class CourseModuleDeserializationTests
     {
