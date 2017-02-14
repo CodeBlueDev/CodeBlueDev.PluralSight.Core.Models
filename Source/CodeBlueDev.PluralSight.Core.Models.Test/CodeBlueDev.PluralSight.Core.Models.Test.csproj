@@ -45,6 +45,7 @@
     <Compile Include="AuthorDeserializationTests.cs" />
     <Compile Include="CourseClipDeserializationTests.cs" />
     <Compile Include="ModelDeserializationTests.cs" />
+    <Compile Include="CourseDeserializationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
