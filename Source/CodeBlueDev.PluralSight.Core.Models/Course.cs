@@ -98,6 +98,11 @@ namespace CodeBlueDev.PluralSight.Core.Models
         public CourseRating Rating { get; set; }
 
         /// <summary>
+        /// Gets or sets the Course Modules assocaited with the PluralSight Course.
+        /// </summary>
+        public CourseModule[] Modules { get; set; }
+
+        /// <summary>
         /// Gets or sets the PluralSight Course image(s).
         /// </summary>
         public CourseImage CourseImage { get; set; }
