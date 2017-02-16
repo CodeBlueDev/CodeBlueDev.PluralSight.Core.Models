@@ -68,7 +68,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// Tests if a Course JSON block with multiple Modules can be deserialized within the Course Model.
         /// </summary>
         [Test, Category("Course")]
-        public void CourseJsonWithMultipleModulesShouldDeserializeIntoCourseModelWithMultipleCourseModules()
+        public void FullCourseJsonWithMultipleModulesShouldDeserializeIntoFullCourseModelWithMultipleCourseModules()
         {
             // Arrange
             string Json = @"
@@ -713,7 +713,16 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
 
             // Assert
             Assert.IsNotNull(course);
+            Assert.AreEqual(CourseLevel.Intermediate, course.Level);
             Assert.IsTrue(course.Modules.Any());
+            Assert.IsNull(course.SkillPaths);
+            Assert.IsNotNull(course.Retired);
+            Assert.IsNotNull(course.Rating);
+            Assert.IsNotNull(course.CourseImage);
+            Assert.IsNotNull(course.Authors);
+            Assert.IsTrue(course.Authors.Any());
+            Assert.IsNotNull(course.Audiences);
+            Assert.IsTrue(course.Audiences.Any());
         }
     }
 }
