@@ -53,6 +53,7 @@
     <Compile Include="RetiredDeserializationTests.cs" />
     <Compile Include="SkillPathDeserializationTests.cs" />
     <Compile Include="TranscriptClipDeserializationTests.cs" />
+    <Compile Include="TranscriptModuleDeserializationTests.cs" />
     <Compile Include="TranscriptSegmentDeserializationTests.cs" />
   </ItemGroup>
   <ItemGroup>
