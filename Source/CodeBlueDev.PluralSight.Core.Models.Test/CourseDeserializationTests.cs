@@ -71,7 +71,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void FullCourseJsonWithMultipleModulesShouldDeserializeIntoFullCourseModelWithMultipleCourseModules()
         {
             // Arrange
-            string Json = @"
+            const string Json = @"
             {
                ""id"":""windows-forms-best-practices"",
                ""publishedOn"":""2014-09-27T00:00:00Z"",
