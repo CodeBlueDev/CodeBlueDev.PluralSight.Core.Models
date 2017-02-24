@@ -21,6 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2CDDD5B8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlueDev.PluralSight.Core.Models.Test", "Source\CodeBlueDev.PluralSight.Core.Models.Test\CodeBlueDev.PluralSight.Core.Models.Test.csproj", "{A9A265EF-E35A-4297-999B-7423B7CBF497}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{C0BC2B7D-6946-4369-BB8C-DB5DE84B3ECF}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE.md = .github\ISSUE_TEMPLATE.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
