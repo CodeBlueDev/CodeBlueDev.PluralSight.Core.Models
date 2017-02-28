@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appveyor.yml = appveyor.yml
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
 		CodeBlueDev.PluralSight.Core.Models.nuspec = CodeBlueDev.PluralSight.Core.Models.nuspec
+		CONTRIBUTING.md = CONTRIBUTING.md
 		LICENSE = LICENSE
 		NuGet Icon.png = NuGet Icon.png
 		README.md = README.md
