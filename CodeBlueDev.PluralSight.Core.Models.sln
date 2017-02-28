@@ -28,6 +28,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{C0BC2B
 		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{D2E4C200-2C94-4F76-99D1-12CD48747C41}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\v1.0.0.md = Documentation\v1.0.0.md
+		Documentation\v1.0.0.pdf = Documentation\v1.0.0.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,5 +56,6 @@ Global
 		{FE1381A7-0829-4440-9BB1-A370BF787E1D} = {090B6FA7-4503-44AE-90A5-1BF1A8977CEB}
 		{A9A265EF-E35A-4297-999B-7423B7CBF497} = {2CDDD5B8-0AE5-4F4C-96D4-130FF2B63BD6}
 		{C0BC2B7D-6946-4369-BB8C-DB5DE84B3ECF} = {8627C119-6970-4065-B9E9-1332D567C1E1}
+		{D2E4C200-2C94-4F76-99D1-12CD48747C41} = {8627C119-6970-4065-B9E9-1332D567C1E1}
 	EndGlobalSection
 EndGlobal
