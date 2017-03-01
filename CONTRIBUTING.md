@@ -247,9 +247,9 @@ When submitting a pull request (PR) please make sure to follow the guidelines be
     * NuGet/Third-Party/Other libraries in alphabetical order. 
 
 ```cs
-    using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-    using NUnit.Framework;
+using NUnit.Framework;
 ```
 
 * Place class properties in the following order:
@@ -262,15 +262,15 @@ When submitting a pull request (PR) please make sure to follow the guidelines be
 Examples:
 
 ```cs
-    public const int SampleConstantValue = 1;
+public const int SampleConstantValue = 1;
 ```
 
 ```cs
-    public static int SampleStaticValue;
+public static int SampleStaticValue;
 ```
 
 ```cs
-    private readonly SampleReadOnlyValue;
+private readonly SampleReadOnlyValue;
 ```
 
 * Place class methods in the following order:
