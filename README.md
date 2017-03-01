@@ -10,21 +10,28 @@
 A .NET library containing PluralSight domain models that can be utilized by other .NET projects.
 
 ## TODO
-While the library aims to be as complete as possible, there are models missing that are planned for a future release. 
+While the library aims to be as complete as possible, there may be models missing that are planned for a future release. 
 
-- [ ] Transcripts (Not returned in current JSON).
+- [x] Transcripts (Not returned in current JSON).
 - [ ] Notes (Appears when watching a video clip).
-
-## Getting Started
-Check out the [documentation](https://github.com/CodeBlueDev/wiki/Documentation) or the Unit Tests included in the CodeBlueDev.PluralSight.Core.Models.Test.csproj.
 
 ## Where to Download
 First, [install NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). Then, install [CodeBlueDev.PluralSight.Core.Models](https://www.nuget.org/packages/CodeBlueDev.PluralSight.Core.Models/) from the package manager console:
 
     PM> Install-Package CodeBlueDev.PluralSight.Core.Models
 
-## Having Issues?
-Submit an issue providing detailed information about the issue [here](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/issues/new). Providing detailed information and attachments about the issue will help resolve the issue faster.
+## Documentation
 
-## Copyright
+If you want to read about using this project or developing libraries that use this project for the latest version, check out the [Wiki](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/wiki). If you are interested in the evolution of the project from previous versions, check out the [Documentation files](https://github.com/CodeBlueDev/CodeBlueDev.PluralSight.Core.Models/tree/master/Documentation).
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, getting started, and the processes for submitting security issues, bugs, enhancement requests, and/or pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## License
+
 CodeBlueDev.PluralSight.Core.Models is Copyright &copy; 2016-2017 [CodeBlueDev](https://www.codebluedev.wordpress.com) and other contributors under the [MIT license](LICENSE).
