@@ -18,12 +18,12 @@ namespace CodeBlueDev.PluralSight.Core.Models
     public sealed class TranscriptClip
     {
         /// <summary>
-        /// Gets or sets the title of the <see cref="CourseClip"/> the Transcript is for.
+        /// Gets or sets the title of the <see cref="CourseModuleClip"/> the Transcript is for.
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets the player url of the <see cref="CourseClip"/> the Transcript is for.
+        /// Gets or sets the player url of the <see cref="CourseModuleClip"/> the Transcript is for.
         /// </summary>
         public string PlayerUrl { get; set; }
 

@@ -40,6 +40,6 @@ namespace CodeBlueDev.PluralSight.Core.Models
         /// <summary>
         /// Gets or sets the clips of the PluralSight Course Module.
         /// </summary>
-        public CourseClip[] Clips { get; set; }
+        public CourseModuleClip[] Clips { get; set; }
     }
 }

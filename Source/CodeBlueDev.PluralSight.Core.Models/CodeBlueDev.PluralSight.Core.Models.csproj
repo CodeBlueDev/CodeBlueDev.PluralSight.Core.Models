@@ -41,7 +41,7 @@
     <Compile Include="Image.cs" />
     <Compile Include="CourseLevel.cs" />
     <Compile Include="CourseRating.cs" />
-    <Compile Include="CourseClip.cs" />
+    <Compile Include="CourseModuleClip.cs" />
     <Compile Include="CourseModule.cs" />
     <Compile Include="Retired.cs" />
     <Compile Include="SkillPath.cs" />
