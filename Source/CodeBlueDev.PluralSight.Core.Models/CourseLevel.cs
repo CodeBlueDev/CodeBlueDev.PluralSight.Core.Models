@@ -12,6 +12,9 @@ namespace CodeBlueDev.PluralSight.Core.Models
     /// <summary>
     /// Represents a PluralSight Course's recommended level.
     /// </summary>
+    /// <example>
+    /// "level": "Intermediate"
+    /// </example>
     public enum CourseLevel
     {
         /// <summary>
