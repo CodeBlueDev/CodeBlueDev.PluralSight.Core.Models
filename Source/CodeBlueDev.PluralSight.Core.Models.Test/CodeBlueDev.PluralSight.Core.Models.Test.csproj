@@ -47,7 +47,7 @@
     <Compile Include="AuthorDeserializationTests.cs" />
     <Compile Include="CourseClipDeserializationTests.cs" />
     <Compile Include="CourseDeserializationTests.cs" />
-    <Compile Include="CourseImageDeserializationTests.cs" />
+    <Compile Include="ImageDeserializationTests.cs" />
     <Compile Include="CourseLevelDeserializationTests.cs" />
     <Compile Include="CourseRatingDeserializationTests.cs" />
     <Compile Include="CourseModuleDeserializationTests.cs" />

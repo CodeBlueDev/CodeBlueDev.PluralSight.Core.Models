@@ -10,6 +10,7 @@
 namespace CodeBlueDev.PluralSight.Core.Models
 {
     using System;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Represents a PluralSight Course.
@@ -98,14 +99,21 @@ namespace CodeBlueDev.PluralSight.Core.Models
         public CourseRating Rating { get; set; }
 
         /// <summary>
+        /// Gets or sets the PluralSight Course image.
+        /// </summary>
+        [DataMember(Name = "courseImage")]
+        public Image CourseImage { get; set; }
+
+        /// <summary>
+        /// Gets or sets the PluralSight Course image.
+        /// </summary>
+        [DataMember(Name = "image")]
+        public Image Image { get; set; }
+
+        /// <summary>
         /// Gets or sets the Course Modules associated with the PluralSight Course.
         /// </summary>
         public CourseModule[] Modules { get; set; }
-
-        /// <summary>
-        /// Gets or sets the PluralSight Course image(s).
-        /// </summary>
-        public CourseImage CourseImage { get; set; }
 
         /// <summary>
         /// Gets or sets the PluralSight Course Author(s).

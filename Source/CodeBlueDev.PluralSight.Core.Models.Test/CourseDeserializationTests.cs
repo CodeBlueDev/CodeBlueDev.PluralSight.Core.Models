@@ -718,7 +718,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             Assert.IsNull(course.SkillPaths);
             Assert.IsNotNull(course.Retired);
             Assert.IsNotNull(course.Rating);
-            Assert.IsNotNull(course.CourseImage);
+            Assert.IsNotNull(course.Image);
             Assert.IsNotNull(course.Authors);
             Assert.IsTrue(course.Authors.Any());
             Assert.IsNotNull(course.Audiences);
