@@ -38,8 +38,8 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
 
             // Assert
             Assert.IsNotNull(courseRating);
-            Assert.AreEqual(4.6, courseRating.Average);
-            Assert.AreEqual(298, courseRating.RatersCount);
+            Assert.AreEqual(4.6, courseRating.AverageRating);
+            Assert.AreEqual(298, courseRating.NumberOfRatings);
         }
     }
 }

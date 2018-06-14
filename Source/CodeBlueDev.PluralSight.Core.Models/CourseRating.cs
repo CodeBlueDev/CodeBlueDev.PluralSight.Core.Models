@@ -29,12 +29,12 @@ namespace CodeBlueDev.PluralSight.Core.Models
         /// Gets or sets the average rating for the course.
         /// </summary>
         [DataMember(Name = "average")]
-        public decimal Average { get; set; }
+        public decimal AverageRating { get; set; }
 
         /// <summary>
         /// Gets or sets the number of users that have rated the course.
         /// </summary>
         [DataMember(Name = "ratersCount")]
-        public int RatersCount { get; set; }
+        public int NumberOfRatings { get; set; }
     }
 }
