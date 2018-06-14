@@ -22,18 +22,19 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if a Course Rating JSON block can be deserialized to a Course Rating model.
         /// </summary>
-        [Test, Category("Course Rating")]
+        [Category("Course Rating")]
+        [Test]
         public void CourseRatingJsonShouldDeserializeIntoCourseRatingModel()
         {
             // Arrange
-            const string Json = @"
+            const string json = @"
             {
                 ""average"":4.6,
                 ""ratersCount"":298
             }";
 
             // Act
-            CourseRating courseRating = JsonConvert.DeserializeObject<CourseRating>(Json);
+            CourseRating courseRating = JsonConvert.DeserializeObject<CourseRating>(json);
 
             // Assert
             Assert.IsNotNull(courseRating);
