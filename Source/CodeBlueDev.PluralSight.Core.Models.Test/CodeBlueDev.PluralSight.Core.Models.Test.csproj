@@ -52,7 +52,6 @@
     <Compile Include="CourseRatingDeserializationTests.cs" />
     <Compile Include="CourseModuleDeserializationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RetiredDeserializationTests.cs" />
     <Compile Include="SkillPathDeserializationTests.cs" />
     <Compile Include="TranscriptDeserializationTests.cs" />
     <Compile Include="TranscriptClipDeserializationTests.cs" />
