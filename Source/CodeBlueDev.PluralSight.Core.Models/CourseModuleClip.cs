@@ -16,7 +16,19 @@ namespace CodeBlueDev.PluralSight.Core.Models
     /// <summary>
     /// Represents a PluralSight Course's Module's clip.
     /// </summary>
-    [DataContract]
+    /// <example>
+    /// "clip": {
+    ///   "id": "windows-forms-best-practices|mark-heath|windows-forms-best-practices-m1|windows-forms-best-practices-m1-01",
+    ///   "clipId": "d9b3e34e-7ddd-4201-a703-0145fbb689f7",
+    ///   "deprecatedId": "mark-heath|windows-forms-best-practices-m1|windows-forms-best-practices-m1-01",
+    ///   "title": "Module Introduction",
+    ///   "duration": "PT57.0510000S",
+    ///   "moduleTitle": "Creating Excellent Windows Forms Applications",
+    ///   "playerUrl": "/player?course=windows-forms-best-practices&author=mark-heath&name=windows-forms-best-practices-m1&clip=0&mode=live",
+    ///   "ordering": 0
+    ///  }
+/// </example>
+[DataContract]
     [Serializable]
     public sealed class CourseModuleClip
     {

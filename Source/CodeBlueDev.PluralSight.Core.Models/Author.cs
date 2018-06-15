@@ -15,6 +15,16 @@ namespace CodeBlueDev.PluralSight.Core.Models
     /// <summary>
     /// Represents a PluralSight Author.
     /// </summary>
+    /// <example>
+    /// "author": {
+    ///   "authorId": "75098b43-9787-43af-ab9d-a1994cede9a4",
+    ///   "id": "mark-heath",
+    ///   "handle": "mark-heath",
+    ///   "firstName": "Mark",
+    ///   "lastName": "Heath",
+    ///   "displayName": "Mark Heath"
+    ///  }
+    /// </example>
     [DataContract]
     [Serializable]
     public sealed class Author
