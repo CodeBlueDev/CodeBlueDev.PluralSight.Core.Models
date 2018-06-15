@@ -29,7 +29,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void ClipJsonShouldDeserializeIntoClipModel()
         {
             // Arrange
-            const string json = @"{
+            const string Json = @"{
           ""id"": ""windows-forms-best-practices|mark-heath|windows-forms-best-practices-m1|windows-forms-best-practices-m1-01"",
           ""clipId"": ""d9b3e34e-7ddd-4201-a703-0145fbb689f7"",
           ""deprecatedId"": ""mark-heath|windows-forms-best-practices-m1|windows-forms-best-practices-m1-01"",
@@ -41,7 +41,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         }";
 
             // Act
-            CourseModuleClip clip = JsonConvert.DeserializeObject<CourseModuleClip>(json);
+            CourseModuleClip clip = JsonConvert.DeserializeObject<CourseModuleClip>(Json);
 
             // Assert
             Assert.IsNotNull(clip);
@@ -63,7 +63,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void CourseClipJsonWithMultipleCourseClipsShouldDeserializeIntoMultipleCourseClipModels()
         {
             // Arrange
-            const string json = @"[
+            const string Json = @"[
         {
           ""id"": ""windows-forms-best-practices|mark-heath|windows-forms-best-practices-m1|windows-forms-best-practices-m1-01"",
           ""clipId"": ""d9b3e34e-7ddd-4201-a703-0145fbb689f7"",
@@ -87,7 +87,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
       ]";
 
             // Act
-            CourseModuleClip[] clips = JsonConvert.DeserializeObject<CourseModuleClip[]>(json);
+            CourseModuleClip[] clips = JsonConvert.DeserializeObject<CourseModuleClip[]>(Json);
 
             // Assert
             Assert.IsNotNull(clips);

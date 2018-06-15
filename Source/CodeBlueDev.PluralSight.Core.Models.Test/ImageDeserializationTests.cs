@@ -27,14 +27,14 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void CourseImageJsonShouldDeserializeToCourseImageModel()
         {
             // Arrange
-            const string json = @"{
+            const string Json = @"{
   ""alt"": ""Windows Forms Best Practices"",
   ""url"": ""https://pluralsight.imgix.net/course-images/windows-forms-best-practices-v1.jpg"",
   ""isDefault"": false
 }";
 
             // Act
-            Image image = JsonConvert.DeserializeObject<Image>(json);
+            Image image = JsonConvert.DeserializeObject<Image>(Json);
 
             // Assert
             Assert.IsNotNull(image);

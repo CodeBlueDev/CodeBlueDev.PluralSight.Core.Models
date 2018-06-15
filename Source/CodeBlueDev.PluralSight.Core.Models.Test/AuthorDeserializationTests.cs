@@ -29,7 +29,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void AuthorJsonShouldDeserializeIntoAuthorModel()
         {
             // Arrange
-            const string json = @"{
+            const string Json = @"{
       ""authorId"": ""75098b43-9787-43af-ab9d-a1994cede9a4"",
       ""id"": ""mark-heath"",
       ""handle"": ""mark-heath"",
@@ -39,7 +39,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
     }";
 
             // Act
-            Author author = JsonConvert.DeserializeObject<Author>(json);
+            Author author = JsonConvert.DeserializeObject<Author>(Json);
 
             // Assert
             Assert.IsNotNull(author);
@@ -59,7 +59,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void AuthorJsonWithMultipleAuthorsShouldDeserializeIntoMultipleAuthorModels()
         {
             // Arrange
-            const string json = @"[
+            const string Json = @"[
   {
     ""authorId"": ""0658e934-b452-48dd-af92-7baa8a020802"",
     ""id"": ""steve-smith"",
@@ -79,7 +79,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
 ]";
 
             // Act
-            Author[] authors = JsonConvert.DeserializeObject<Author[]>(json);
+            Author[] authors = JsonConvert.DeserializeObject<Author[]>(Json);
 
             // Assert
             Assert.IsNotNull(authors);

@@ -29,7 +29,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void SkillPathJsonShouldDeserializeIntoSkillPathModel()
         {
             // Arrange
-            const string json = @"{
+            const string Json = @"{
       ""id"":""7e0ce425-0263-45ce-a6c1-186ae706654e"",
       ""iconUrl"":""https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png"",
       ""retired"":false,
@@ -39,7 +39,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
     }";
 
             // Act
-            SkillPath skillPath = JsonConvert.DeserializeObject<SkillPath>(json);
+            SkillPath skillPath = JsonConvert.DeserializeObject<SkillPath>(Json);
 
             // Assert
             Assert.IsNotNull(skillPath);
@@ -59,7 +59,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void SkillPathJsonWithMultipleSkillPathsShouldDeserializeIntoMultipleSkillPathModels()
         {
             // Arrange
-            const string json = @"[
+            const string Json = @"[
   {
     ""id"":""7e0ce425-0263-45ce-a6c1-186ae706654e"",
     ""iconUrl"":""https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png"",
@@ -79,7 +79,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
 ]";
 
             // Act
-            Author[] authors = JsonConvert.DeserializeObject<Author[]>(json);
+            Author[] authors = JsonConvert.DeserializeObject<Author[]>(Json);
 
             // Assert
             Assert.IsNotNull(authors);

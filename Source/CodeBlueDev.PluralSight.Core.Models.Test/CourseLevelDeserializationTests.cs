@@ -29,10 +29,10 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void BeginnerCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
         {
             // Arrange
-            const string json = @"""Beginner""";
+            const string Json = @"""Beginner""";
 
             // Act
-            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(json);
+            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(Json);
 
             // Assert
             Assert.IsTrue(Enum.IsDefined(typeof(CourseLevel), courseLevel));
@@ -46,10 +46,10 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void IntermediateCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
         {
             // Arrange
-            const string json = @"""Intermediate""";
+            const string Json = @"""Intermediate""";
 
             // Act
-            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(json);
+            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(Json);
 
             // Assert
             Assert.IsTrue(Enum.IsDefined(typeof(CourseLevel), courseLevel));
@@ -63,10 +63,10 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void AdvancedCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
         {
             // Arrange
-            const string json = @"""Advanced""";
+            const string Json = @"""Advanced""";
 
             // Act
-            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(json);
+            CourseLevel courseLevel = JsonConvert.DeserializeObject<CourseLevel>(Json);
 
             // Assert
             Assert.IsTrue(Enum.IsDefined(typeof(CourseLevel), courseLevel));

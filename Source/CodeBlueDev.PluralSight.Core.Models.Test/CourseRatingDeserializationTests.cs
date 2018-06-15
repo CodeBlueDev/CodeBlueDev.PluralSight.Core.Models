@@ -27,14 +27,14 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         public void CourseRatingJsonShouldDeserializeIntoCourseRatingModel()
         {
             // Arrange
-            const string json = @"
+            const string Json = @"
             {
                 ""average"":4.6,
                 ""ratersCount"":298
             }";
 
             // Act
-            CourseRating courseRating = JsonConvert.DeserializeObject<CourseRating>(json);
+            CourseRating courseRating = JsonConvert.DeserializeObject<CourseRating>(Json);
 
             // Assert
             Assert.IsNotNull(courseRating);
