@@ -3,7 +3,7 @@
 //   Copyright (c) CodeBlueDev. All rights reserved.
 // </copyright>
 // <summary>
-//   Represents a PluralSight Course's images.
+//   Represents an image for PluralSight.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
