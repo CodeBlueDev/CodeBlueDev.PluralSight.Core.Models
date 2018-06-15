@@ -27,8 +27,8 @@ namespace CodeBlueDev.PluralSight.Core.Models
     ///   "playerUrl": "/player?course=windows-forms-best-practices&author=mark-heath&name=windows-forms-best-practices-m1&clip=0&mode=live",
     ///   "ordering": 0
     ///  }
-/// </example>
-[DataContract]
+    /// </example>
+    [DataContract]
     [Serializable]
     public sealed class CourseModuleClip
     {
