@@ -17,7 +17,7 @@ namespace CodeBlueDev.PluralSight.Core.Models
     /// </summary>
     /// <example>
     /// {
-    ///  "exerciseFilesUrl": "http://s.pluralsight.com/course-materials/windows-forms-best-practices/866AB96258/20140926213054/windows-forms-best-practices.zip?userHandle=aaf74aa9-49b7-415b-ba2d-bdc49b285671"
+    ///  "exerciseFilesUrl": "http://s.pluralsight.com/course-materials/windows-forms-best-practices/866AB96258/20140926213054/windows-forms-best-practices.zip?userHandle=03b9fd64-819c-4def-a610-52457b0479ec"
     /// }
     /// </example>
     [DataContract]
