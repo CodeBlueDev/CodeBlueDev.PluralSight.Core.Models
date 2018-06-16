@@ -24,7 +24,8 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if a JSON block for a 'Beginner' Course Level can be deserialized to the appropriate CourseLevel enum value.
         /// </summary>
-        [Test, Category("Course Level")]
+        [Category("Course Level")]
+        [Test]
         public void BeginnerCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
         {
             // Arrange
@@ -40,7 +41,8 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if a JSON block for an 'Intermediate' Course Level can be deserialize to the appropriate CourseLevel enum value.
         /// </summary>
-        [Test, Category("Course Level")]
+        [Category("Course Level")]
+        [Test]
         public void IntermediateCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
         {
             // Arrange
@@ -56,7 +58,8 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if a JSON block for an 'Advanced' Course Level can deserialized to the appropriate CourseLevel enum value.
         /// </summary>
-        [Test, Category("Course Level")]
+        [Category("Course Level")]
+        [Test]
         public void AdvancedCourseLevelJsonShouldDeserializeIntoCourseLevelEnum()
         {
             // Arrange

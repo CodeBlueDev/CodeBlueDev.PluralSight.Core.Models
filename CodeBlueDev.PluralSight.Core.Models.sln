@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		Documentation\v2.0.0.pdf = Documentation\v2.0.0.pdf
 		Documentation\v2.0.1.md = Documentation\v2.0.1.md
 		Documentation\v2.0.1.pdf = Documentation\v2.0.1.pdf
+		Documentation\v3.0.0.md = Documentation\v3.0.0.md
+		Documentation\v3.0.0.pdf = Documentation\v3.0.0.pdf
 	EndProjectSection
 EndProject
 Global

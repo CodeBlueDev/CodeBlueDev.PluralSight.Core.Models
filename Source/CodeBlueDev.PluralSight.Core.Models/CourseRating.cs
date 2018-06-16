@@ -10,21 +10,31 @@
 namespace CodeBlueDev.PluralSight.Core.Models
 {
     using System;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Represents the rating for a course.
     /// </summary>
+    /// <example>
+    /// "rating": {
+    ///    "average": 4.6,
+    ///    "ratersCount": 316
+    /// }
+    /// </example>
+    [DataContract(Name = "rating")]
     [Serializable]
     public sealed class CourseRating
     {
         /// <summary>
         /// Gets or sets the average rating for the course.
         /// </summary>
-        public decimal Average { get; set; }
+        [DataMember(Name = "average")]
+        public decimal AverageRating { get; set; }
 
         /// <summary>
         /// Gets or sets the number of users that have rated the course.
         /// </summary>
-        public int RatersCount { get; set; }
+        [DataMember(Name = "ratersCount")]
+        public int NumberOfRatings { get; set; }
     }
 }
