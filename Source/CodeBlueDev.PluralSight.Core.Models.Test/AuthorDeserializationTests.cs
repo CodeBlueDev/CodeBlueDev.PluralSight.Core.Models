@@ -9,6 +9,8 @@
 
 namespace CodeBlueDev.PluralSight.Core.Models.Test
 {
+    using System;
+
     using Newtonsoft.Json;
 
     using NUnit.Framework;
@@ -22,24 +24,28 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if an Author JSON block can be deserialized to an Author model.
         /// </summary>
-        [Test, Category("Author")]
+        [Category("Author")]
+        [Test]
         public void AuthorJsonShouldDeserializeIntoAuthorModel()
         {
             // Arrange
-            const string Json = @"
-            {
-                ""id"":""mark-heath"",
-                ""firstName"":""Mark"",
-                ""lastName"":""Heath"",
-                ""displayName"":""Mark Heath""
-            }";
+            const string Json = @"{
+      ""authorId"": ""75098b43-9787-43af-ab9d-a1994cede9a4"",
+      ""id"": ""mark-heath"",
+      ""handle"": ""mark-heath"",
+      ""firstName"": ""Mark"",
+      ""lastName"": ""Heath"",
+      ""displayName"": ""Mark Heath""
+    }";
 
             // Act
             Author author = JsonConvert.DeserializeObject<Author>(Json);
 
             // Assert
             Assert.IsNotNull(author);
+            Assert.AreEqual(Guid.Parse("75098b43-9787-43af-ab9d-a1994cede9a4"), author.AuthorId);
             Assert.AreEqual("mark-heath", author.Id);
+            Assert.AreEqual("mark-heath", author.Handle);
             Assert.AreEqual("Mark", author.FirstName);
             Assert.AreEqual("Heath", author.LastName);
             Assert.AreEqual("Mark Heath", author.DisplayName);
@@ -48,25 +54,29 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if an Author JSON block with multiple Authors can be deserialized to multiple Author models.
         /// </summary>
-        [Test, Category("Author")]
+        [Category("Author")]
+        [Test]
         public void AuthorJsonWithMultipleAuthorsShouldDeserializeIntoMultipleAuthorModels()
         {
             // Arrange
-            const string Json = @"
-            [
-                {
-                    ""id"":""steve-smith"",
-                    ""firstName"":""Steve"",
-                    ""lastName"":""Smith"",
-                    ""displayName"":""Steve Smith""
-                },
-                {
-                    ""id"":""david-starr"",
-                    ""firstName"":""David"",
-                    ""lastName"":""Starr"",
-                    ""displayName"":""David Starr""
-                }
-            ]";
+            const string Json = @"[
+  {
+    ""authorId"": ""0658e934-b452-48dd-af92-7baa8a020802"",
+    ""id"": ""steve-smith"",
+    ""handle"": ""steve-smith"",
+    ""firstName"": ""Steve"",
+    ""lastName"": ""Smith"",
+    ""displayName"": ""Steve Smith""
+  },
+  {
+    ""authorId"": ""c7dc9469-fdeb-4716-9792-e5650e1e54ca"",
+    ""id"": ""david-starr"",
+    ""handle"": ""david-starr"",
+    ""firstName"": ""David"",
+    ""lastName"": ""Starr"",
+    ""displayName"": ""David Starr""
+  }
+]";
 
             // Act
             Author[] authors = JsonConvert.DeserializeObject<Author[]>(Json);

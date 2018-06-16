@@ -107,7 +107,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             }";
 
             // Act
-            TranscriptClip transcriptClip = JsonConvert.DeserializeObject<TranscriptClip>(Json);
+            TranscriptModuleClip transcriptClip = JsonConvert.DeserializeObject<TranscriptModuleClip>(Json);
 
             // Assert
             Assert.IsNotNull(transcriptClip);
@@ -345,7 +345,7 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
             ]";
 
             // Act
-            TranscriptClip[] transcriptClips = JsonConvert.DeserializeObject<TranscriptClip[]>(Json);
+            TranscriptModuleClip[] transcriptClips = JsonConvert.DeserializeObject<TranscriptModuleClip[]>(Json);
 
             // Asssert
             Assert.IsNotNull(transcriptClips);

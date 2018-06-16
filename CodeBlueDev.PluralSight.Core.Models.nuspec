@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>CodeBlueDev.PluralSight.Core.Models</id>
-    <version>2.0.1.0</version>
+    <version>3.0.0.0</version>
     <title>CodeBlueDev.PluralSight.Core.Models</title>
     <authors>CodeBlueDev</authors>
     <owners>CodeBlueDev</owners>
@@ -12,8 +12,14 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A .NET library containing PluralSight domain models that can be utilized by other .NET projects.</description>
     <summary>A .NET library containing PluralSight domain models that can be utilized by other .NET projects.</summary>
-    <releaseNotes>Update Course to include Course Module property that was missing. Add Transcript, Transcript Module, Transcript Clip, and Transcript Segment models.</releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <releaseNotes>
+      * Update Models to match PluralSight JSON.
+        * Remove unused Models.
+      * Update Models to use DataContract and DataMembers to allow Model properties to be altered from the JSON.
+      * Update and add Unit Tests.
+      * Add Course Exercise Files Model.
+    </releaseNotes>
+    <copyright>Copyright 2018</copyright>
     <language>en-US</language>
     <tags>PluralSight CodeBlueDev</tags>
   </metadata>

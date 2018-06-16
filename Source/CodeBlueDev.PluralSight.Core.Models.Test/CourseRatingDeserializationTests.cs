@@ -22,7 +22,8 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
         /// <summary>
         /// Tests if a Course Rating JSON block can be deserialized to a Course Rating model.
         /// </summary>
-        [Test, Category("Course Rating")]
+        [Category("Course Rating")]
+        [Test]
         public void CourseRatingJsonShouldDeserializeIntoCourseRatingModel()
         {
             // Arrange
@@ -37,8 +38,8 @@ namespace CodeBlueDev.PluralSight.Core.Models.Test
 
             // Assert
             Assert.IsNotNull(courseRating);
-            Assert.AreEqual(4.6, courseRating.Average);
-            Assert.AreEqual(298, courseRating.RatersCount);
+            Assert.AreEqual(4.6, courseRating.AverageRating);
+            Assert.AreEqual(298, courseRating.NumberOfRatings);
         }
     }
 }
