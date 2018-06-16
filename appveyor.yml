@@ -17,7 +17,7 @@ environment:
     secure: kfcmRAw41jRIeZy0b3LGfpsvSleVQYOxXLWS/uMRdzbSljRiq53XrEfubWxlUbmi
 
 before_build:
-  - cmd: appveyor-retry nuget restore
+  - nuget restore
 
 build:
   project: CodeBlueDev.PluralSight.Core.Models.sln
