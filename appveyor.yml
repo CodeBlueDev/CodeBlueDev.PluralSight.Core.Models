@@ -29,15 +29,19 @@ assembly_info:
   assembly_file_version: "{version}"
   assembly_informational_version: "{version}"
 
+nuget:
+  account_feed: true
+  project_feed: true
+
 before_build:
   - cmd: echo Performing NuGet Restore
   - cmd: appveyor-retry nuget restore -verbosity detailed
 
 build:
-  parallel: true
   project: CodeBlueDev.PluralSight.Core.Models.sln
-  publish_nuget: true
+  parallel: true
   verbosity: detailed
+  publish_nuget: true
 
 test_script:
 - ps: >-
