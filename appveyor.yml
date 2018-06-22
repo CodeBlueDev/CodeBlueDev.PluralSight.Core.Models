@@ -16,9 +16,12 @@ environment:
   COVERALLS_REPO_TOKEN:
     secure: kfcmRAw41jRIeZy0b3LGfpsvSleVQYOxXLWS/uMRdzbSljRiq53XrEfubWxlUbmi
 
+cache:
+  - packages -> **\packages.config
+
 before_build:
   - cmd: ECHO Performing NuGet Restore
-  - cmd: appveyor-retry nuget restore
+  - cmd: appveyor-retry nuget restore -verbosity detailed
 
 build:
   project: CodeBlueDev.PluralSight.Core.Models.sln
@@ -40,8 +43,6 @@ artifacts:
 
 deploy:
   provider: NuGet
-  on:
-    appveyor_repo_tag: true
   api_key:
     secure: yx4NC9MGigYes63ckSkAysWgcYTmpbhe0ZDb9HeO4THEMdbi1gKuI07QxijiuIRK
   artifact: /.*CodeBlueDev.*.nupkg/
