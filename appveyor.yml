@@ -1,4 +1,4 @@
-version: x.x.{build}
+version: 3.0.{build}
 
 branches:
   only:
@@ -9,12 +9,13 @@ skip_commits:
     - README.md
 
 image: Visual Studio 2017
-
 configuration: Release
+platform: Any CPU
 
 environment:
   COVERALLS_REPO_TOKEN:
     secure: kfcmRAw41jRIeZy0b3LGfpsvSleVQYOxXLWS/uMRdzbSljRiq53XrEfubWxlUbmi
+  EnableNuGetPackageRestore: true
 
 cache:
   - packages -> **\packages.config
