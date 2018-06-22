@@ -13,15 +13,24 @@ configuration: Release
 platform: Any CPU
 
 environment:
+  EnableNuGetPackageRestore: true
   COVERALLS_REPO_TOKEN:
     secure: kfcmRAw41jRIeZy0b3LGfpsvSleVQYOxXLWS/uMRdzbSljRiq53XrEfubWxlUbmi
-  EnableNuGetPackageRestore: true
 
 cache:
-  - packages -> **\packages.config
+  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+  - '%LocalAppData%\NuGet\Cache'    # NuGet < v3
+  - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
 
 before_build:
-  - cmd: ECHO Performing NuGet Restore
+  - cmd: echo Performing NuGet Restore
   - cmd: appveyor-retry nuget restore -verbosity detailed
 
 build:
