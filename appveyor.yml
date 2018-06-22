@@ -59,6 +59,4 @@ deploy:
 - provider: NuGet
   api_key:
     secure: YQjExjfMtx5yNmmDujMicRaII0yUfSnfzVOEqg36o5kLAoVXV4rDetRSseTeO7H5
-  artifact: /.*CodeBlueDev.*.nupkg/
-  on:
-    branch: master
+  artifact: /.*CodeBlueDev.*\.nupkg/
