@@ -45,9 +45,9 @@ build:
 
 test_script:
 - ps: >-
-    packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"packages\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe" -targetargs:" --domain=single  Source\CodeBlueDev.PluralSight.Core.Models.Test\bin\Release\CodeBlueDev.PluralSight.Core.Models.Test.dll" -output:coverage.xml
+  packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"packages\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe" -targetargs:" --domain=single  Source\CodeBlueDev.PluralSight.Core.Models.Test\bin\Release\CodeBlueDev.PluralSight.Core.Models.Test.dll" -output:coverage.xml
 - ps: >-
-    packages\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage.xml
+  packages\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage.xml
 
 after_test:
 - cmd: nuget pack CodeBlueDev.PluralSight.Core.Models.nuspec
